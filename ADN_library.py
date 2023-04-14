@@ -24,3 +24,6 @@ def pourcentNucleo(ADN):
 def fromFileToDataframe(path):
     header, ADN = read_file(path)
     return pd.DataFrame(ADN,columns=['Nucleotide'])
+
+def fromStringToDataframe(seq):
+    return pd.DataFrame(seq,columns=['Nucleotide'])

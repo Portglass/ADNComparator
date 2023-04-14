@@ -1,8 +1,10 @@
 import streamlit as st
 
 def head():
-    st.header("ADN Comparator")
-    st.subheader("Comparer vos ADN et tirez en maximun d'information")
+    st.title("ADN Comparator")
+    activity = ['Intro', 'DNA', 'DotPlot', "About"]
+    choice = st.sidebar.selectbox("Select Activity", activity)
+    return choice
 
 def bar_chart(df):
     st.bar_chart(df)
