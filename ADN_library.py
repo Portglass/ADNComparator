@@ -1,4 +1,4 @@
-import sys, re
+import pandas as pd
 
 def read_file(path):
     f=open(path,'r')
@@ -14,4 +14,13 @@ def nbNucleo(ADN):
 
 def pourcentNucleo(ADN):
     a,t,c,g = nbNucleo(ADN)
-    return a/len(ADN), a/len(ADN), a/len(ADN), a/len(ADN)
+    list_pourcent = [a/len(ADN)*100, t/len(ADN)*100, c/len(ADN)*100, g/len(ADN)*100]
+    source = pd.DataFrame({
+        'Pourcent': list_pourcent,
+        'Nucleotide': ['A', 'C', 'T','G']
+     })
+    return list_pourcent,source
+
+def fromFileToDataframe(path):
+    header, ADN = read_file(path)
+    return pd.DataFrame(ADN,columns=['Nucleotide'])
