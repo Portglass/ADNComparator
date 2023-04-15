@@ -23,11 +23,9 @@ def main():
             sequence = ""
             for record in SeqIO.parse(stringio, 'fasta'):
                 sequence = str(record.seq)
-                print('Passed')
                 st.write(f'Length of sequence: {len(sequence)}')
 
             df_ADN = al.fromStringToDataframe(list(sequence))
-
             vs.bar_chart(df_ADN)
             _, df_pourcent_ADN = al.pourcentNucleo(list(sequence))
             bar_chart = alt.Chart(df_pourcent_ADN).mark_bar().encode(

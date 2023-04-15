@@ -27,3 +27,25 @@ def fromFileToDataframe(path):
 
 def fromStringToDataframe(seq):
     return pd.DataFrame(seq,columns=['Nucleotide'])
+
+def complementaire(seq):
+    seq_comp = []
+    for i in seq:
+        if i == 'A':
+            seq_comp.append("T")
+        elif i == 'T':
+            seq_comp.append("A")
+        elif i == 'C':
+            seq_comp.append("G")
+        elif i == 'G':
+            seq_comp.append("C")
+        else:
+            return -1
+    return seq_comp
+
+def transposer(seq):
+    return reversed(seq)
+
+def nbMismatch(seq1,seq2):
+    print("to do")
+
