@@ -47,5 +47,13 @@ def transposer(seq):
     return reversed(seq)
 
 def nbMismatch(seq1,seq2):
-    print("to do")
+    compt = 0
+    if len(seq1) != len(seq2):
+        print("Pas la même longueur")
+        return -1
+    else:
+        for i in range(0,len(seq1)):
+            if (seq1[i]=='A' and seq2[i]!='T') or (seq1[i]=='T' and seq2[i]!='A') or (seq1[i]=='C' and seq2[i]!='G') or (seq1[i]=='G' and seq2[i]!='C'):
+                compt += 1
+        return compt
 
