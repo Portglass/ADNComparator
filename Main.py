@@ -34,7 +34,7 @@ def main():
             )
 
             st.altair_chart(bar_chart, use_container_width=True)
-
+            #A mettre doubleFile
 
 
     elif choice == 'About':
