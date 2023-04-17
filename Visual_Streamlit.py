@@ -2,7 +2,7 @@ import streamlit as st
 
 def head():
     st.title("ADN Comparator")
-    activity = ['Intro', 'DNA', 'DotPlot', "About"]
+    activity = ['Intro', 'DNA', 'DotPlot', 'Comparaison entre deux ADN',"About"]
     choice = st.sidebar.selectbox("Select Activity", activity)
     return choice
 

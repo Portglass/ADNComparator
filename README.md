@@ -9,6 +9,7 @@ A faire :
 - Alignement
 - Mauvais appariement
 - Biomarqueur (polyarthrite)
+- Sécurité pour être sûr qu'il y a seulement un seul fichier 
 
 lien utile :
 https://blog.jcharistech.com/2020/05/13/building-a-simple-bioinformatics-app-with-streamlit-and-biopython/
