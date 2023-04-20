@@ -2,11 +2,11 @@ import ADN_library as al
 import Visual_Streamlit as vs
 import streamlit as st
 import matplotlib
+
 matplotlib.use("Agg")
 from Bio import SeqIO
 from io import StringIO
 import altair as alt
-
 
 
 def main():
@@ -38,18 +38,17 @@ def main():
         print(len(seq_file))
 
 
-    elif choice == "Comparaison entre deux ADN":
+    elif choice == "Comparaison entre deux ADN":#Fonctionne pas
         st.subheader("Comparaison entre deux ADN")
+        if len(list_seq) <= 1:
+            st.subheader("Aucun ADN n'a été enregistrer veuillez vous rendre dans l'onglet DNA")
+        else:
+            st.write("Le nombre de mistmatch est " + str(al.nbMismatch(list_seq[0], list_seq[1])))
 
 
     elif choice == 'About':
         st.subheader("About")
 
 
-
-
 if __name__ == '__main__':
-	main()
-
-
-
+    main()
