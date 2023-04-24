@@ -35,11 +35,12 @@ def main():
                 x='Nucleotide:O',
             )
             st.altair_chart(bar_chart, use_container_width=True)
-        print(len(seq_file))
+
 
 
     elif choice == "Comparaison entre deux ADN":#Fonctionne pas
         st.subheader("Comparaison entre deux ADN")
+        print(len(list_seq))
         if len(list_seq) <= 1:
             st.subheader("Aucun ADN n'a été enregistrer veuillez vous rendre dans l'onglet DNA")
         else:
@@ -48,6 +49,7 @@ def main():
 
     elif choice == 'About':
         st.subheader("About")
+        st.write("Réalisé par Martin R2villon, étudiant à l'EBI et Efrei")
 
 
 if __name__ == '__main__':
