@@ -57,3 +57,17 @@ def nbMismatch(seq1,seq2):
                 compt += 1
         return compt
 
+def isCorrectADN(seq):
+    if sum(nbNucleo(seq)) != len(seq):
+        return False
+    return True
+
+
+def summaryADNText(seq):
+    text = "Cette séquence d'adn contient " + str(len(seq)) +" nucléotides"
+    if isCorrectADN(seq):
+        text += " et possède seulement des nucléotides ACTG. "
+    else:
+        text += " mais contient d'autres bases que ACTG. "
+    return text
+

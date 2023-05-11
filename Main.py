@@ -24,8 +24,10 @@ def main():
             stringio = StringIO(file.getvalue().decode("utf-8"))
             sequence = ""
             for record in SeqIO.parse(stringio, 'fasta'):
+                seq_name = record.description
                 sequence = str(record.seq)
-                st.write(f'Length of sequence: {len(sequence)}')
+            st.subheader(seq_name)
+            st.write(al.summaryADNText(list(sequence)))
             list_seq.append(list(sequence))
             df_ADN = al.fromStringToDataframe(list(sequence))
             vs.bar_chart(df_ADN)
